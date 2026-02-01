@@ -60,18 +60,6 @@ bash start.sh
 You: 你好
 ```
 
-### 🐳 Docker 部署（推荐生产环境）
-
-**一键部署**：
-
-```bash
-# Linux/macOS
-bash docker-deploy.sh
-
-# Windows
-docker-deploy.bat
-```
-
 
 ### 💻 手动安装（高级用户）
 
