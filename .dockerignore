@@ -1,0 +1,57 @@
+# Docker 忽略文件
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# 测试和临时文件
+*.log
+*.tmp
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 数据文件
+data/
+conversations/
+workspace/
+*.db
+*.sqlite
+
+# 环境变量
+.env
+.env.local
+
+# Git
+.git/
+.gitignore
+
+# 文档
+*.md
+docs/
+
+# 测试文件
+test_*.py
+verify_*.py
+diagnose.py
+
+# macOS
+.DS_Store
+
+# 备份文件
+*.bak
+*_old.py
+agent_old.py
