@@ -10,6 +10,7 @@ ENV/
 build/
 dist/
 *.egg-info/
+suna/
 
 # 环境变量
 backend/.env
