@@ -26,13 +26,13 @@ else
 fi
 
 # 检查 .env 文件
-if [ ! -f .env ]; then
+if [ ! -f backend/.env ]; then
     echo ""
     echo "📝 首次使用，需要配置 API Key"
     echo "请输入阿里云百炼 API Key:"
     read -r DASHSCOPE_KEY
     
-    echo "DASHSCOPE_API_KEY=$DASHSCOPE_KEY" > .env
+    echo "DASHSCOPE_API_KEY=$DASHSCOPE_KEY" > backend/.env
     
     echo ""
     echo "（可选）是否配置 Tavily 搜索 API Key? (y/N)"
@@ -40,10 +40,10 @@ if [ ! -f .env ]; then
     if [ "$USE_TAVILY" = "y" ] || [ "$USE_TAVILY" = "Y" ]; then
         echo "请输入 Tavily API Key:"
         read -r TAVILY_KEY
-        echo "TAVILY_API_KEY=$TAVILY_KEY" >> .env
+        echo "TAVILY_API_KEY=$TAVILY_KEY" >> backend/.env
     fi
     
-    echo "✅ 配置已保存到 .env 文件"
+    echo "✅ 配置已保存到 backend/.env 文件"
 fi
 
 echo ""

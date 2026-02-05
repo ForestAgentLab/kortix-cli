@@ -4,8 +4,8 @@
 """
 
 from fastapi import HTTPException, status
-from core.agent import Agent
-from core.utils.logger import get_logger
+from backend.core.agent import Agent
+from backend.core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 

@@ -3,8 +3,8 @@ from typing import List, Dict, Any, Optional, Iterator
 from dashscope import Generation
 from dashscope.api_entities.dashscope_response import GenerationResponse
 import dashscope
-from core.utils.logger import get_logger
-from core.utils.config import get_config
+from backend.core.utils.logger import get_logger
+from backend.core.utils.config import get_config
 
 logger = get_logger(__name__)
 

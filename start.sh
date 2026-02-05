@@ -46,7 +46,7 @@ echo ""
 
 # 步骤 3: 配置 API Key
 echo -e "${BLUE}[3/5] 配置 API Key...${NC}"
-if [ ! -f .env ]; then
+if [ ! -f backend/.env ]; then
     echo -e "${YELLOW}[!] 首次使用，需要配置 API Key${NC}"
     echo ""
     
@@ -62,20 +62,20 @@ if [ ! -f .env ]; then
     fi
     
     # 创建 .env 文件
-    echo "DASHSCOPE_API_KEY=$DASHSCOPE_KEY" > .env
+    echo "DASHSCOPE_API_KEY=$DASHSCOPE_KEY" > backend/.env
     
     # 询问是否配置 Tavily (可选)
     echo ""
     read -p "是否配置 Tavily 搜索 API Key? (可选，直接回车跳过): " USE_TAVILY
     if [ ! -z "$USE_TAVILY" ]; then
-        echo "TAVILY_API_KEY=$USE_TAVILY" >> .env
+        echo "TAVILY_API_KEY=$USE_TAVILY" >> backend/.env
         echo -e "${GREEN}[✓] Tavily Key 已配置${NC}"
     fi
     
     echo ""
-    echo -e "${GREEN}[✓] API Key 已保存到 .env 文件${NC}"
+    echo -e "${GREEN}[✓] API Key 已保存到 backend/.env 文件${NC}"
 else
-    echo -e "${GREEN}[✓] .env 文件已存在${NC}"
+    echo -e "${GREEN}[✓] backend/.env 文件已存在${NC}"
 fi
 echo ""
 

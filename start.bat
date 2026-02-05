@@ -48,7 +48,7 @@ echo.
 
 REM 步骤 3: 配置 API Key
 echo [3/5] 配置 API Key...
-if not exist .env (
+if not exist backend\.env (
     echo [!] 首次使用，需要配置 API Key
     echo.
     
@@ -65,20 +65,20 @@ if not exist .env (
     )
     
     REM 创建 .env 文件
-    echo DASHSCOPE_API_KEY=!DASHSCOPE_KEY!> .env
+    echo DASHSCOPE_API_KEY=!DASHSCOPE_KEY!> backend\.env
     
     REM 询问是否配置 Tavily (可选)
     echo.
     set /p USE_TAVILY="是否配置 Tavily 搜索 API Key? (可选，直接回车跳过): "
     if not "!USE_TAVILY!"=="" (
-        echo TAVILY_API_KEY=!USE_TAVILY!>> .env
+        echo TAVILY_API_KEY=!USE_TAVILY!>> backend\.env
         echo [✓] Tavily Key 已配置
     )
     
     echo.
-    echo [✓] API Key 已保存到 .env 文件
+    echo [✓] API Key 已保存到 backend\.env 文件
 ) else (
-    echo [✓] .env 文件已存在
+    echo [✓] backend\.env 文件已存在
 )
 echo.
 

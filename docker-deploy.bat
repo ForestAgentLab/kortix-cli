@@ -19,20 +19,20 @@ echo ✅ Docker 已安装
 docker --version
 
 REM 检查 .env 文件
-if not exist .env (
+if not exist backend\.env (
     echo.
     echo 📝 首次使用，需要配置 API Key
     set /p DASHSCOPE_KEY="请输入阿里云百炼 API Key: "
-    echo DASHSCOPE_API_KEY=%DASHSCOPE_KEY%> .env
+    echo DASHSCOPE_API_KEY=%DASHSCOPE_KEY%> backend\.env
     
     echo.
     set /p USE_TAVILY="（可选）是否配置 Tavily 搜索 API Key? (y/N): "
     if /i "%USE_TAVILY%"=="y" (
         set /p TAVILY_KEY="请输入 Tavily API Key: "
-        echo TAVILY_API_KEY=%TAVILY_KEY%>> .env
+        echo TAVILY_API_KEY=%TAVILY_KEY%>> backend\.env
     )
     
-    echo ✅ 配置已保存到 .env 文件
+    echo ✅ 配置已保存到 backend\.env 文件
 )
 
 echo.

@@ -6,10 +6,10 @@ import json
 import asyncio
 from typing import AsyncIterator
 
-from api.models import ChatRequest, ChatResponse, SuccessResponse
-from api.dependencies import get_agent
-from core.agent import Agent  # 用于类型注解
-from core.utils.logger import get_logger
+from backend.api.models import ChatRequest, ChatResponse, SuccessResponse
+from backend.api.dependencies import get_agent
+from backend.core.agent import Agent  # 用于类型注解
+from backend.core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter(tags=["chat"])

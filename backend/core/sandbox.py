@@ -3,8 +3,8 @@ import docker
 from docker.models.containers import Container
 from typing import Dict, Any, Optional
 import time
-from core.utils.logger import get_logger
-from core.utils.config import get_config
+from backend.core.utils.logger import get_logger
+from backend.core.utils.config import get_config
 
 logger = get_logger(__name__)
 

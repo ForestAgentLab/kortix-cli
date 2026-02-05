@@ -7,6 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: kortix-cli
     
+    # 环境变量文件
+    env_file:
+      - backend/.env
+    
     # 环境变量
     environment:
       # 阿里云百炼 API Key（必需）
@@ -24,7 +28,7 @@ services:
       - ./data/conversations:/app/data/conversations
       - ./data/workspace:/app/data/workspace
       # 配置文件（可选，如需自定义）
-      - ./config.yaml:/app/config.yaml
+      - ./backend/config.yaml:/app/backend/config.yaml
     
     # 网络模式
     network_mode: bridge

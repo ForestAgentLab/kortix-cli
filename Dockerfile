@@ -10,17 +10,16 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# 复制依赖文件
-COPY requirements.txt .
+# 复制 backend 依赖文件
+COPY backend/requirements.txt ./backend/
 
 # 安装 Python 依赖
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r backend/requirements.txt
 
 # 复制项目文件
-COPY core/ ./core/
+COPY backend/ ./backend/
 COPY run.py .
-COPY config.yaml .
-COPY .env.example .
+COPY start_api.py .
 
 # 创建数据目录
 RUN mkdir -p /app/data/conversations /app/data/workspace

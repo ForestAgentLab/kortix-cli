@@ -1,6 +1,6 @@
 """API 模块初始化"""
 
-from api.models import (
+from backend.api.models import (
     ChatRequest,
     ChatResponse,
     ToolInfo,

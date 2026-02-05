@@ -1,8 +1,8 @@
 """Web 搜索工具 - 使用 Tavily API"""
 from typing import List, Optional
-from core.tools.base import Tool, ToolResult
-from core.utils.logger import get_logger
-from core.utils.config import get_config
+from backend.core.tools.base import Tool, ToolResult
+from backend.core.utils.logger import get_logger
+from backend.core.utils.config import get_config
 import os
 
 logger = get_logger(__name__)

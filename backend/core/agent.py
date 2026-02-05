@@ -5,9 +5,9 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-from core.llm import LLM, Message
-from core.sandbox import DockerSandbox
-from core.tools import (
+from backend.core.llm import LLM, Message
+from backend.core.sandbox import DockerSandbox
+from backend.core.tools import (
     ToolRegistry,
     FileManagerTool,
     WebSearchTool,
@@ -15,8 +15,8 @@ from core.tools import (
     CalculatorTool,
     ToolResult
 )
-from core.utils.logger import get_logger
-from core.utils.config import get_config
+from backend.core.utils.logger import get_logger
+from backend.core.utils.config import get_config
 
 logger = get_logger(__name__)
 

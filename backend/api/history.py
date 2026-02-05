@@ -3,14 +3,14 @@
 from fastapi import APIRouter, HTTPException, status, Query
 from typing import Optional
 
-from api.models import (
+from backend.api.models import (
     HistoryResponse, 
     HistoryMessage, 
     HistoryLoadRequest,
     SuccessResponse
 )
-from api.dependencies import get_agent
-from core.utils.logger import get_logger
+from backend.api.dependencies import get_agent
+from backend.core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter(tags=["history"])

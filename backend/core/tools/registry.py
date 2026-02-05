@@ -1,7 +1,7 @@
 """工具注册系统"""
 from typing import Dict, List, Any, Optional
-from core.tools.base import Tool, ToolResult
-from core.utils.logger import get_logger
+from backend.core.tools.base import Tool, ToolResult
+from backend.core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 

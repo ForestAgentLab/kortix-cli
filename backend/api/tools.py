@@ -3,9 +3,9 @@
 from fastapi import APIRouter, HTTPException, status
 from typing import List
 
-from api.models import ToolInfo, ToolExecuteRequest, ToolExecuteResponse, FunctionDefinition
-from api.dependencies import get_agent
-from core.utils.logger import get_logger
+from backend.api.models import ToolInfo, ToolExecuteRequest, ToolExecuteResponse, FunctionDefinition
+from backend.api.dependencies import get_agent
+from backend.core.utils.logger import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter(tags=["tools"])

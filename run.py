@@ -22,8 +22,8 @@ from rich.panel import Panel
 from rich import print as rprint
 from rich.prompt import Prompt
 
-from core.agent import Agent
-from core.utils import init_config, setup_logging, get_config
+from backend.core.agent import Agent
+from backend.core.utils import init_config, setup_logging, get_config
 
 console = Console()
 
@@ -84,7 +84,7 @@ def print_status():
 
 
 @click.command()
-@click.option('--config', default='config.yaml', help='配置文件路径')
+@click.option('--config', default='backend/config.yaml', help='配置文件路径')
 @click.option('--debug', is_flag=True, help='启用调试模式')
 def main(config: str, debug: bool):
     """Kortix AI Agent CLI - 命令行 AI 助手"""
@@ -101,7 +101,7 @@ def main(config: str, debug: bool):
     
     except FileNotFoundError as e:
         console.print(f"[red]错误: {e}[/red]")
-        console.print("\n[yellow]提示: 请确保 config.yaml 存在，或使用 --config 指定配置文件[/yellow]")
+        console.print("\n[yellow]提示: 请确保 backend/config.yaml 存在，或使用 --config 指定配置文件[/yellow]")
         sys.exit(1)
     except Exception as e:
         console.print(f"[red]初始化失败: {e}[/red]")

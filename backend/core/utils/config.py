@@ -8,12 +8,30 @@ from dotenv import load_dotenv
 class Config:
     """配置管理类"""
     
-    def __init__(self, config_path: str = "config.yaml"):
-        # 加载环境变量
-        load_dotenv()
+    def __init__(self, config_path: str = "backend/config.yaml"):
+        # 加载环境变量（支持从backend/.env加载）
+        # 先尝试backend/.env，再尝试根目录.env
+        if Path("backend/.env").exists():
+            load_dotenv("backend/.env")
+        else:
+            load_dotenv()
+        
+        # 智能查找配置文件
+        config_file = Path(config_path)
+        if not config_file.exists():
+            # 如果指定路径不存在，尝试几个可能的位置
+            possible_paths = [
+                Path("backend/config.yaml"),
+                Path("config.yaml"),
+                Path(__file__).parent.parent.parent / "config.yaml",
+            ]
+            for path in possible_paths:
+                if path.exists():
+                    config_file = path
+                    break
         
         # 加载配置文件
-        self.config_path = Path(config_path)
+        self.config_path = config_file
         self.config: Dict[str, Any] = self._load_config()
         
         # 替换环境变量
@@ -115,7 +133,7 @@ class Config:
 # 全局配置实例
 config: Optional[Config] = None
 
-def init_config(config_path: str = "config.yaml") -> Config:
+def init_config(config_path: str = "backend/config.yaml") -> Config:
     """初始化全局配置"""
     global config
     config = Config(config_path)
